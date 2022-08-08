@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/tv_women"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/sf_pro_text_semi_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/women"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_women"
+            app:layout_constraintStart_toStartOf="@+id/tv_women"
+            app:layout_constraintTop_toBottomOf="@+id/tv_women" />
+
+        <View
+            android:id="@+id/fullView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_women"
+            app:layout_constraintStart_toStartOf="@+id/tv_women"
+            app:layout_constraintTop_toBottomOf="@+id/tv_women" />
+
+
+        <TextView
+            android:id="@+id/tv_men"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:fontFamily="@font/sf_pro_text_semi_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/men"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintStart_toEndOf="@+id/guideline2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/tv_men"
+            app:layout_constraintStart_toStartOf="@+id/tv_men"
+            app:layout_constraintTop_toBottomOf="@+id/tv_men" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

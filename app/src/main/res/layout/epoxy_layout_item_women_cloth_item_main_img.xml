@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="index"
+            type="Integer" />
+
+        <variable
+            name="listener"
+            type="com.clothing.shoppingcarts.ui.shop.item.ItemListener" />
+
+        <variable
+            name="buyListener"
+            type="com.clothing.shoppingcarts.ui.shop.item.BuyListener" />
+
+        <variable
+            name="tryListener"
+            type="com.clothing.shoppingcarts.ui.shop.item.TryListener" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_item_img"
+            android:layout_width="match_parent"
+            android:layout_height="530dp"
+            android:scaleType="fitXY"
+            app:imgUrl="@{imageUrl}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_item_img"
+                app:layout_constraintEnd_toEndOf="@+id/iv_item_img">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/add"
+                    android:layout_width="102dp"
+                    android:layout_height="40dp"
+                    android:onClick="@{()->listener.onClicked(index)}"
+                    android:background="@color/c_green">
+
+                    <ImageView
+                        android:id="@+id/add_img"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:src="@drawable/bag_icon"
+                        android:scaleType="fitXY"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/iv_add_cart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/sf_pro_text_semi_bold"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/add_img"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/tryDress"
+                    android:layout_width="102dp"
+                    android:layout_height="40dp"
+                    android:onClick="@{()->tryListener.onTry(index)}"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/hanger_img"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:src="@drawable/hanger_icon"
+                        android:scaleType="fitXY"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/try_dress"
+                        android:textSize="16sp"
+                        android:textColor="@color/blue"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/sf_pro_text_semi_bold"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/hanger_img"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/buy"
+                    android:layout_width="102dp"
+                    android:layout_height="40dp"
+                    android:onClick="@{()->buyListener.onBuy(index)}"
+                    android:background="@color/black">
+
+                    <ImageView
+                        android:id="@+id/buy_img"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:src="@drawable/card_icon"
+                        android:scaleType="fitXY"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/buy"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/sf_pro_text_semi_bold"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/buy_img"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

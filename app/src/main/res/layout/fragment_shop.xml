@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.clothing.shoppingcarts.base.enums.CategoryEnum" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.clothing.shoppingcarts.ui.shop.ShopCategoriesViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/bg_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/women_blur_img"
+            android:scaleType="fitXY"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/categorySelection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_120sdp"
+            android:paddingVertical="@dimen/_6sdp"
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/tv_women"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/sf_pro_text_semi_bold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/women"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16ssp"
+                android:onClick="@{()->viewModel.onSelectType(CategoryEnum.WOMEN)}"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/black"
+                android:visibility="@{viewModel.typeSelected == CategoryEnum.WOMEN?View.VISIBLE:View.INVISIBLE}"
+                app:layout_constraintEnd_toEndOf="@+id/tv_women"
+                app:layout_constraintStart_toStartOf="@+id/tv_women"
+                app:layout_constraintTop_toBottomOf="@+id/tv_women" />
+
+            <View
+                android:id="@+id/fullView"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/light_grey"
+                app:layout_constraintEnd_toEndOf="@+id/tv_women"
+                app:layout_constraintStart_toStartOf="@+id/tv_women"
+                app:layout_constraintTop_toBottomOf="@+id/tv_women" />
+
+
+            <TextView
+                android:id="@+id/tv_men"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:fontFamily="@font/sf_pro_text_semi_bold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/men"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16ssp"
+                android:onClick="@{()->viewModel.onSelectType(CategoryEnum.MEN)}"
+                app:layout_constraintStart_toEndOf="@+id/guideline2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/black"
+                android:visibility="@{viewModel.typeSelected == CategoryEnum.MEN?View.VISIBLE:View.INVISIBLE}"
+                app:layout_constraintEnd_toEndOf="@+id/tv_men"
+                app:layout_constraintStart_toStartOf="@+id/tv_men"
+                app:layout_constraintTop_toBottomOf="@+id/tv_men" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/categorySelection" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_categories"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/promo_bg_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/women_icon"
+            android:scaleType="fitXY"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/promo_dialog_layout"
+            android:background="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_18sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/cross_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:fontFamily="@font/sf_pro_text_regular"
+                android:includeFontPadding="false"
+                android:text="@string/spring_fling"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_22ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_close" />
+
+            <TextView
+                android:id="@+id/tv_text_two"
+                android:layout_width="@dimen/_160sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/sf_pro_text_regular"
+                android:includeFontPadding="false"
+                android:text="@string/receive_upto_off_your_purchase"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+            <TextView
+                android:id="@+id/tv_text_three"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/sf_pro_text_bold"
+                android:includeFontPadding="false"
+                android:text="@string/receive_upto_off_your_purchase"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_text_two" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_text_three" />
+
+            <EditText
+                android:id="@+id/et_mail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@null"
+                android:textColor="@color/black"
+                android:inputType="textEmailAddress"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:hint="@string/enter_email_address"
+                android:textColorHint="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/viewTwo"/>
+
+            <View
+                android:id="@+id/viewTwo"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_mail" />
+
+            <Button
+                android:id="@+id/tv_enter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_60sdp"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:fontFamily="@font/sf_pro_text_regular"
+                android:includeFontPadding="false"
+                android:textColor="@color/light_grey"
+                android:backgroundTint="@color/blueish"
+                android:textSize="@dimen/_11ssp"
+                android:paddingHorizontal="@dimen/_30sdp"
+                android:text="@string/get_my_offer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewTwo" />
+
+            <TextView
+                android:id="@+id/tv_no_thanks"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:fontFamily="@font/sf_pro_text_bold"
+                android:includeFontPadding="false"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:text="@string/no_thanks"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_enter" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

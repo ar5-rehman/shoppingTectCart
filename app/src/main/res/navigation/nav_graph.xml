@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/shop">
+
+    <fragment
+        android:id="@+id/shop"
+        android:name="com.clothing.shoppingcarts.ui.shop.ShopFragment"
+        android:label="ShopFragment" >
+        <action
+            android:id="@+id/action_shop_to_womenClothDetailsFragment"
+            app:destination="@id/womenClothDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/search"
+        android:name="com.clothing.shoppingcarts.ui.search.SearchFragment"
+        android:label="SearchFragment" />
+
+    <fragment
+        android:id="@+id/closet"
+        android:name="com.clothing.shoppingcarts.ui.closet.ClosetFragment"
+        android:label="ClosetFragment" />
+
+    <fragment
+        android:id="@+id/bag"
+        android:name="com.clothing.shoppingcarts.ui.bag.BagFragment"
+        android:label="BagFragment" >
+
+        <action
+            android:id="@+id/action_shop_to_checkoutFragment"
+            app:destination="@id/checkoutFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/womenClothDetailsFragment"
+        android:name="com.clothing.shoppingcarts.ui.shop.womendetails.WomenClothDetailsFragment"
+        android:label="WomenClothDetailsFragment" >
+
+        <argument
+            android:name="categoryName"
+            app:argType="string"
+            android:defaultValue="" />
+
+        <argument
+            android:name="categoryID"
+            app:argType="integer"
+            android:defaultValue="-1" />
+
+        <action
+            android:id="@+id/action_shop_to_womenClothItemFragment"
+            app:destination="@id/womenClothItemFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/womenClothItemFragment"
+        android:name="com.clothing.shoppingcarts.ui.shop.item.WomenClothItemFragment"
+        android:label="WomenClothItemFragment" >
+
+        <argument
+            android:name="categoryPrice"
+            app:argType="string"
+            android:defaultValue="" />
+
+        <argument
+            android:name="categoryName"
+            app:argType="string"
+            android:defaultValue="" />
+
+        <argument
+            android:name="categoryID"
+            app:argType="integer"
+            android:defaultValue="-1" />
+
+        <action
+            android:id="@+id/action_shop_to_bagFragment"
+            app:destination="@id/bag" />
+
+        <action
+            android:id="@+id/action_shop_to_checkoutFragment"
+            app:destination="@id/checkoutFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.clothing.shoppingcarts.ui.checkout.CheckoutFragment"
+        android:label="CheckoutFragment" />
+</navigation>

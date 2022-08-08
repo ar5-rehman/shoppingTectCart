@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">ClothingTechShopping</string>
+
+    <string name="alert">Alert</string>
+    <string name="search">Search</string>
+    <string name="shop">Shop</string>
+    <string name="closet">Closet</string>
+    <string name="bag">Bag</string>
+    <string name="spring_fling">The Spring Fling</string>
+    <string name="thanks_for_order">Thanks for your order!</string>
+    <string name="order_no">Order #5504</string>
+    <string name="expected_del">Expected Delivery</string>
+    <string name="receive_upto_off_your_purchase">Receive up to 50% off your next purchase.</string>
+    <string name="join_our_meeting_list">Join our mailing list and we’ll send you your special offer.*</string>
+    <string name="enter_email_address">Enter Email Address</string>
+    <string name="get_my_offer">GET MY 50% OFFER</string>
+    <string name="continue_shopping">Continue Shopping</string>
+    <string name="no_thanks">NO THANKS!</string>
+    <string name="new_arrivals">New Arrivals</string>
+    <string name="men">Men</string>
+    <string name="women">Women</string>
+    <string name="add">Add</string>
+    <string name="buy">Buy</string>
+    <string name="place_order">Place Order</string>
+    <string name="edit_shipping">EDIT SHIPPING</string>
+    <string name="edit_cards">EDIT CARD</string>
+    <string name="try_dress">Try</string>
+    <string name="try_me">TRY ME</string>
+    <string name="dresses">Dresses</string>
+    <string name="total">TOTAL:</string>
+    <string name="edit">Edit</string>
+    <string name="dummy_text">V-Neck Dress with print $39.99</string>
+    <string name="date">July 15th, 2022</string>
+    <string name="sub_total">SUB TOTAL:</string>
+    <string name="tax">tax:</string>
+    <string name="no_price">Price $0</string>
+    <string name="no_item">There are no items in your shopping bag.</string>
+    <string name="checkout">Check Out</string>
+    <string name="shopping_bag">Shopping Bag</string>
+    <string name="user_shipping_info">Use shipping information in profile.</string>
+    <string name="user_card_info">Use credit card information in profile.</string>
+    <string name="tax_shopping">+ Tax (free shipping over $50)</string>
+    <string name="dresses_desc">Romantic, trendy or casual – shop our full selection of ladies’ dresses here. Whether you’re on the lookout for cocktail or fitted styles, our evening dresses have got you covered. </string>
+
+    <string name="price_">$%s</string>
+
+</resources>
