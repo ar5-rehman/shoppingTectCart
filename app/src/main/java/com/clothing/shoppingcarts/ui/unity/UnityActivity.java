@@ -13,7 +13,7 @@ public class UnityActivity extends UnityPlayerActivity {
         super.onCreate(savedInstanceState);
         Log.d("UnityActivity", "onCreate called!");
         Intent intent = getIntent();
-
+ 
         //getting Intent data
         String vfrString = intent.getStringExtra("vfrString");
         //String colorwayID = String.valueOf(intent.getIntExtra("colorwayID", 0));
