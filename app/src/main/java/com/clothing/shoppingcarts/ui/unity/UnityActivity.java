@@ -13,18 +13,19 @@ public class UnityActivity extends UnityPlayerActivity {
         super.onCreate(savedInstanceState);
         Log.d("UnityActivity", "onCreate called!");
         Intent intent = getIntent();
- 
+
         //getting Intent data
         String vfrString = intent.getStringExtra("vfrString");
         //String colorwayID = String.valueOf(intent.getIntExtra("colorwayID", 0));
 
         //String myConcatenatedString = productID.concat(";").concat(colorwayID);
-        //Intent intent = new Intent(this, com.unity3d.player.UnityPlayerActivity.class);
+
 
         //onSendMessage("ShoppingAppAPI", "SendGarments", myConcatenatedString);
-        super.mUnityPlayer.UnitySendMessage("ShoppingAppAPI", "SendGarments", vfrString);
-       // super.mUnityPlayer.UnitySendMessage("ShoppingAppAPI", "Execute", "{'messageId': '001', 'parameters': ''}");
-        startActivity(intent);
+        //super.mUnityPlayer.UnitySendMessage("ShoppingAppAPI", "SendGarments", vfrString);
+        Intent unityIntent = new Intent(this, com.unity3d.player.UnityPlayerActivity.class);
+        super.mUnityPlayer.UnitySendMessage("ShoppingAppAPI", "Execute", "{'messageId': '001', 'parameters': ''}");
+        startActivity(unityIntent);
     }
 
     public void onSendMessage(String s1, String s2, String s3)
