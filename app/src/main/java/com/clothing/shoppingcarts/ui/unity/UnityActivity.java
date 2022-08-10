@@ -19,11 +19,12 @@ public class UnityActivity extends UnityPlayerActivity {
         //String colorwayID = String.valueOf(intent.getIntExtra("colorwayID", 0));
 
         //String myConcatenatedString = productID.concat(";").concat(colorwayID);
-        //Intent unityIntent = new Intent(this, com.unity3d.player.UnityPlayerActivity.class);
+
 
         //onSendMessage("ShoppingAppAPI", "SendGarments", myConcatenatedString);
-        super.mUnityPlayer.UnitySendMessage("ShoppingAppAPI", "SendGarments", vfrString);
-       // super.mUnityPlayer.UnitySendMessage("ShoppingAppAPI", "Execute", "{'messageId': '001', 'parameters': ''}");
+        //super.mUnityPlayer.UnitySendMessage("ShoppingAppAPI", "SendGarments", vfrString);
+        Intent unityIntent = new Intent(this, com.unity3d.player.UnityPlayerActivity.class);
+        super.mUnityPlayer.UnitySendMessage("ShoppingAppAPI", "Execute", "{'messageId': '001', 'parameters': ''}");
         startActivity(unityIntent);
     }
 
