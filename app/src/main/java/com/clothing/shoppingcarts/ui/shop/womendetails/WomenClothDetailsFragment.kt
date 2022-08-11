@@ -96,6 +96,8 @@ class WomenClothDetailsFragment : BaseFragment(R.layout.fragment_women_cloth_det
             if (view == null)
                 return@withModels
 
+
+            
             if(subCategoriesList.isEmpty()){
                 return@withModels
             }
