@@ -52,6 +52,8 @@ class BagFragment : BaseFragment(R.layout.fragment_bag) {
 
         if(it.status){
 
+
+
             dialog!!.dismiss()
 
         }

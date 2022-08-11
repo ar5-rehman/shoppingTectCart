@@ -75,6 +75,7 @@ class ShopFragment : BaseFragment(R.layout.fragment_shop) {
             binding.rvCategories.adapter = categoriesAdapter
             categoriesAdapter.setCategoriesData(categoriesList[1].categories)
 
+
             dialog!!.dismiss()
 
         }
