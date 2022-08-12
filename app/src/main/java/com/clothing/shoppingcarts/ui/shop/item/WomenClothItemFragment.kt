@@ -126,14 +126,13 @@ class WomenClothItemFragment : BaseFragment(R.layout.fragment_women_cloth_item) 
                 })
                 tryListener(object: TryListener{
                     override fun onTry(index: Int) {
-                        var vfrString: String = ("").toString()
 
-
+                        /*var vfrString: String = ("").toString()
                         val intent = Intent(requireActivity(), UnityActivity::class.java)
                         vfrString = vfrString + item!!.id.toString() + ";" + item!!.defaultColorway.id.toString() + ";"
                         intent.putExtra("vfrString", vfrString)
                         intent.flags = Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
-                        startActivity(intent)
+                        startActivity(intent)*/
                     }
                 })
             }
