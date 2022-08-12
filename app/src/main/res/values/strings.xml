@@ -12,7 +12,7 @@
     <string name="expected_del">Expected Delivery</string>
     <string name="receive_upto_off_your_purchase">Receive up to 50% off your next purchase.</string>
     <string name="join_our_meeting_list">Join our mailing list and we’ll send you your special offer.*</string>
-    <string name="enter_email_address">Enter Email Address</string>
+    <string name="enter_email_address"><font size="15">Enter Email Address</font></string>
     <string name="get_my_offer">GET MY 50% OFFER</string>
     <string name="continue_shopping">Continue Shopping</string>
     <string name="no_thanks">NO THANKS!</string>

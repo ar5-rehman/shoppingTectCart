@@ -9,9 +9,20 @@
             type="Integer" />
 
         <variable
+            name="value"
+            type="String" />
+
+        <variable
+            name="viewModel"
+            type="com.clothing.shoppingcarts.ui.bag.BagViewModel" />
+
+        <variable
             name="listener"
             type="com.clothing.shoppingcarts.ui.shop.item.ItemListener" />
 
+        <variable
+            name="itemsAdd"
+            type="com.clothing.shoppingcarts.ui.bag.BagInterface" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -55,7 +66,7 @@
                 android:id="@+id/tv_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1"
+                android:text="@{viewModel.value}"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10sdp"
                 android:layout_marginStart="@dimen/_5sdp"
@@ -70,6 +81,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/up_icon"
                 android:scaleType="fitXY"
+                android:onClick="@{()->itemsAdd.onRemove()}"
                 android:padding="@dimen/_4sdp"
                 android:layout_marginStart="@dimen/_5sdp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -83,6 +95,7 @@
                 android:src="@drawable/down_icon"
                 android:scaleType="fitXY"
                 android:padding="@dimen/_4sdp"
+                android:onClick="@{()->itemsAdd.onAdd()}"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginStart="@dimen/_5sdp"
                 app:layout_constraintStart_toEndOf="@+id/tv_count"

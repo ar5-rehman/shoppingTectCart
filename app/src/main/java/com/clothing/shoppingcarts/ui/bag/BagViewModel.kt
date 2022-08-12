@@ -1,5 +1,6 @@
 package com.clothing.shoppingcarts.ui.bag
 
+import androidx.databinding.ObservableField
 import androidx.lifecycle.viewModelScope
 import com.clothing.shoppingcarts.base.viewmodel.BaseAction
 import com.clothing.shoppingcarts.base.viewmodel.BaseViewModel
@@ -17,6 +18,7 @@ internal class BagViewModel @Inject constructor(
     private val clothingRepository: ClothingRepository,
 ) : BaseViewModel<BagViewModel.ViewState, BagViewModel.Action>(ViewState()) {
 
+    val value = ObservableField("1")
 
     init {
         loadData()
@@ -33,6 +35,18 @@ internal class BagViewModel @Inject constructor(
                 sendAction(Action.LoadingFailure(error.message))
             }
         }
+    }
+
+    fun onAdd(){
+        var v = value.get()!!.toInt()
+        v++
+        value.set(v.toString())
+    }
+
+    fun onRemove(){
+        var v = value.get()!!.toInt()
+        v--
+        value.set(v.toString())
     }
 
     /**
