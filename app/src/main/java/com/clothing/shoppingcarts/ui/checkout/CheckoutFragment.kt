@@ -91,11 +91,15 @@ class CheckoutFragment : BaseFragment(R.layout.fragment_checkout) {
             if (view == null)
                 return@withModels
 
-            (0..4).forEachIndexed { index, i ->
+            cartItems {
+                id("cart_items")
+            }
+
+            /*(0..1).forEachIndexed { index, i ->
                 cartItems {
                     id("cart_items")
                 }
-            }
+            }*/
         }
     }
 

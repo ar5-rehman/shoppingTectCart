@@ -2,10 +2,10 @@
     <string name="app_name">ClothingTechShopping</string>
 
     <string name="alert">Alert</string>
-    <string name="search">Search</string>
-    <string name="shop">Shop</string>
-    <string name="closet">Closet</string>
-    <string name="bag">Bag</string>
+    <string name="search">SEARCH</string>
+    <string name="shop">SHOP</string>
+    <string name="closet">CLOSET</string>
+    <string name="bag">BAG</string>
     <string name="spring_fling">The Spring Fling</string>
     <string name="thanks_for_order">Thanks for your order!</string>
     <string name="order_no">Order #5504</string>
@@ -19,12 +19,12 @@
     <string name="new_arrivals">New Arrivals</string>
     <string name="men">Men</string>
     <string name="women">Women</string>
-    <string name="add">Add</string>
-    <string name="buy">Buy</string>
+    <string name="add">ADD</string>
+    <string name="buy">BUY</string>
     <string name="place_order">Place Order</string>
     <string name="edit_shipping">EDIT SHIPPING</string>
     <string name="edit_cards">EDIT CARD</string>
-    <string name="try_dress">Try</string>
+    <string name="try_dress">TRY</string>
     <string name="try_me">TRY ME</string>
     <string name="dresses">Dresses</string>
     <string name="total">TOTAL:</string>
@@ -45,4 +45,7 @@
     <string name="price_">$%s</string>
     <!--The following entry is necessary for Unity Library-->
     <string name="game_view_content_description">Game view</string>
+
+    <dimen name="bagde_left_margin">10dp</dimen>
+    <dimen name="design_bottom_navigation_margin">6dp</dimen>
 </resources>
