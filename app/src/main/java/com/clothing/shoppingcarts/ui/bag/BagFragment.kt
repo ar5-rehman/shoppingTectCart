@@ -83,11 +83,41 @@ class BagFragment : BaseFragment(R.layout.fragment_bag) {
             if (view == null)
                 return@withModels
 
-            (1..6).forEachIndexed { index, i ->
+            itemBagItems {
+                id("bag_items")
+                viewModel(viewModel)
+                itemsAdd(object : BagInterface{
+                    override fun onAdd() {
+                        viewModel.onAdd()
+                    }
+
+                    override fun onRemove() {
+                        if(viewModel.value.get()!!.toInt() != 0){
+                            viewModel.onRemove()
+                        }
+
+                    }
+
+                })
+            }
+
+            /*(1..2).forEachIndexed { index, i ->
                 itemBagItems {
                     id("bag_items")
+                    index(index)
+                    viewModel(viewModel)
+                    itemsAdd(object : BagInterface{
+                        override fun onAdd(index: Int) {
+
+                        }
+
+                        override fun onRemove(index: Int) {
+
+                        }
+
+                    })
                 }
-            }
+            }*/
 
         }
     }
