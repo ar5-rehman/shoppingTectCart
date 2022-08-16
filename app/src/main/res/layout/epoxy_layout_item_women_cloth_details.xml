@@ -47,7 +47,7 @@
             android:id="@+id/tv_desc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/sanspro_regular"
             android:text="@{name}"
             android:textColor="@color/black"

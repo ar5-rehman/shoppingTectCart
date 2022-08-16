@@ -1,5 +1,6 @@
 package com.clothing.shoppingcarts.ui.bag
 
+import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
 import androidx.lifecycle.viewModelScope
 import com.clothing.shoppingcarts.base.viewmodel.BaseAction
@@ -19,6 +20,7 @@ internal class BagViewModel @Inject constructor(
 ) : BaseViewModel<BagViewModel.ViewState, BagViewModel.Action>(ViewState()) {
 
     val value = ObservableField("1")
+    val tryObservable = ObservableBoolean(false)
 
     init {
         loadData()

@@ -3,6 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.clothing.shoppingcarts.ui.bag.BagViewModel" />
+
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -65,10 +73,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottom_layer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@color/white"
         android:layout_marginHorizontal="@dimen/_12sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_items"
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
@@ -76,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_1sdp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
@@ -125,9 +133,9 @@
             android:id="@+id/try_me_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:background="@drawable/bg_try_me"
-            android:fontFamily="@font/sanspro_semibold"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@{viewModel.tryObservable?@drawable/bg_try_me_clicked:@drawable/bg_try_me}"
+            android:fontFamily="@font/sourcesanspro_light"
             android:text="@string/try_me"
             android:gravity="center"
             android:includeFontPadding="false"
@@ -140,7 +148,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tax_tv"
-            app:drawableStartCompat="@drawable/hanger_icon" />
+            app:drawableStartCompat="@drawable/hanger_icon"
+            android:drawablePadding="-25dp" />
 
         <TextView
             android:id="@+id/buy_btn"
@@ -148,7 +157,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
             android:background="@drawable/bg_try_me"
-            android:fontFamily="@font/sanspro_semibold"
+            android:fontFamily="@font/sourcesanspro_light"
             android:text="@string/buy"
             android:gravity="center"
             android:backgroundTint="@color/blakish"
@@ -162,7 +171,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/try_me_btn"
-            app:drawableStartCompat="@drawable/card_icon" />
+            app:drawableStartCompat="@drawable/card_icon"
+            android:drawablePadding="-25dp" />
 
         <View
             android:layout_width="match_parent"
@@ -170,8 +180,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/buy_btn">
-
         </View>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

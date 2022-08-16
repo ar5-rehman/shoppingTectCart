@@ -109,23 +109,38 @@ class WomenClothItemFragment : BaseFragment(R.layout.fragment_women_cloth_item) 
             itemWomenClothItemMainImg {
                 id("main_img")
                 index(0)
+                viewModel(viewModel)
                 item!!.defaultColorway.images.forEachIndexed { index, garmentImages ->
                     imageUrl("https://clothingtechshopping-api-dev.azurewebsites.net/Storage/GarmentImage/"+garmentImages.imageUrl)
                 }
                 listener(object: ItemListener{
                     override fun onClicked(index: Int) {
-                        val action = WomenClothItemFragmentDirections.actionShopToBagFragment()
-                        navManager.navigate(action)
+
+                        viewModel.tryObservable.set(false)
+                        viewModel.buyObservable.set(false)
+                        viewModel.addObservable.set(true)
+
+                        /*val action = WomenClothItemFragmentDirections.actionShopToBagFragment()
+                        navManager.navigate(action)*/
                     }
                 })
                 buyListener(object: BuyListener{
                     override fun onBuy(index: Int) {
-                        val action = WomenClothItemFragmentDirections.actionShopToCheckoutFragment()
-                        navManager.navigate(action)
+
+                        viewModel.tryObservable.set(false)
+                        viewModel.buyObservable.set(true)
+                        viewModel.addObservable.set(false)
+
+                        /*val action = WomenClothItemFragmentDirections.actionShopToCheckoutFragment()
+                        navManager.navigate(action)*/
                     }
                 })
                 tryListener(object: TryListener{
                     override fun onTry(index: Int) {
+
+                        viewModel.tryObservable.set(true)
+                        viewModel.buyObservable.set(false)
+                        viewModel.addObservable.set(false)
 
                         /*var vfrString: String = ("").toString()
                         val intent = Intent(requireActivity(), UnityActivity::class.java)
@@ -134,6 +149,18 @@ class WomenClothItemFragment : BaseFragment(R.layout.fragment_women_cloth_item) 
                         intent.flags = Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
                         startActivity(intent)*/
                     }
+                })
+
+                favListener(object: FavListener{
+                    override fun fav() {
+                        if(viewModel.favObservable.get()){
+                            viewModel.favObservable.set(false)
+                        }else{
+                            viewModel.favObservable.set(true)
+                        }
+
+                    }
+
                 })
             }
 
