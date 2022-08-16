@@ -63,6 +63,7 @@ class BagFragment : BaseFragment(R.layout.fragment_bag) {
         super.onViewCreated(view, savedInstanceState)
 
         observe(viewModel.stateLiveData, stateObserver)
+        binding.viewModel = viewModel
 
         dialog = showCustomProgressBar(requireContext(), layoutInflater)
 
@@ -75,6 +76,10 @@ class BagFragment : BaseFragment(R.layout.fragment_bag) {
         binding.buyBtn.setOnDebouncedClickListener {
             val action = BagFragmentDirections.actionShopToCheckoutFragment()
             navManager.navigate(action)
+        }
+
+        binding.tryMeBtn.setOnDebouncedClickListener {
+            viewModel.tryObservable.set(true)
         }
     }
 

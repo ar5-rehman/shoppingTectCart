@@ -9,6 +9,7 @@
             name="index"
             type="Integer" />
 
+        <import type="android.view.View" />
 
         <variable
             name="listener"
@@ -21,6 +22,14 @@
         <variable
             name="tryListener"
             type="com.clothing.shoppingcarts.ui.shop.item.TryListener" />
+
+        <variable
+            name="favListener"
+            type="com.clothing.shoppingcarts.ui.shop.item.FavListener" />
+
+        <variable
+            name="viewModel"
+            type="com.clothing.shoppingcarts.ui.shop.item.WomenClothItemViewModel" />
 
         <variable
             name="imageUrl"
@@ -47,7 +56,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
+        <ImageView
+            android:id="@+id/iv_heart"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:src="@{viewModel.favObservable?@drawable/fav_fill:@drawable/fav_white}"
+            android:scaleType="fitXY"
+            android:padding="@dimen/_5sdp"
+            android:onClick="@{()->favListener.fav()}"
+            android:layout_margin="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_item_img"
+            app:layout_constraintTop_toTopOf="@+id/iv_item_img" />
+
+        <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -57,13 +78,15 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/add"
                     android:layout_width="120dp"
-                    android:layout_height="45dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="right"
+                    android:visibility="@{viewModel.addObservable?View.GONE:View.VISIBLE}"
                     android:onClick="@{()->listener.onClicked(index)}"
                     android:background="@color/c_green">
 
                     <ImageView
                         android:id="@+id/add_img"
-                        android:layout_width="18dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="18dp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:src="@drawable/bag_icon"
@@ -79,26 +102,63 @@
                         android:text="@string/add"
                         android:textSize="16sp"
                         android:textColor="@color/black"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        android:fontFamily="@font/sf_pro_text_semi_bold"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:fontFamily="@font/sanspro_semibold"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/add_img"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/add_clicked"
+                android:layout_width="125dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right"
+                android:visibility="@{viewModel.addObservable?View.VISIBLE:View.GONE}"
+                android:onClick="@{()->listener.onClicked(index)}"
+                android:background="@color/c_green">
+
+                <ImageView
+                    android:id="@+id/add_img_clicked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:src="@drawable/bag_icon"
+                    android:scaleType="fitXY"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/iv_add_cart_clicked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:fontFamily="@font/sanspro_semibold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/add_img_clicked"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/tryDress"
                     android:layout_width="120dp"
-                    android:layout_height="45dp"
-                    android:onClick="@{()->tryListener.onTry(index)}"
-                    android:background="@color/white">
+                    android:layout_height="40dp"
+                    android:layout_gravity="right"
+                    android:background="@drawable/bg_try"
+                    android:visibility="@{viewModel.tryObservable?View.GONE:View.VISIBLE}"
+                    android:onClick="@{()->tryListener.onTry(index)}">
 
                     <ImageView
                         android:id="@+id/hanger_img"
-                        android:layout_width="18dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="18dp"
-                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_12sdp"
                         android:src="@drawable/hanger_icon"
                         android:scaleType="fitXY"
                         app:layout_constraintTop_toTopOf="parent"
@@ -112,25 +172,63 @@
                         android:textSize="16sp"
                         android:textColor="@color/blue"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:fontFamily="@font/sf_pro_text_semi_bold"
+                        android:fontFamily="@font/sanspro_semibold"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/hanger_img"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/tryDressClicked"
+                android:layout_width="125dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right"
+                android:visibility="@{viewModel.tryObservable?View.VISIBLE:View.GONE}"
+                android:onClick="@{()->tryListener.onTry(index)}"
+                android:background="@drawable/bg_try">
+
+                <ImageView
+                    android:id="@+id/hanger_img_clicked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:src="@drawable/hanger_icon"
+                    android:scaleType="fitXY"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/try_dress"
+                    android:textSize="16sp"
+                    android:textColor="@color/blue"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@font/sanspro_semibold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/hanger_img_clicked"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/buy"
                     android:layout_width="120dp"
-                    android:layout_height="45dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="right"
+                android:visibility="@{viewModel.buyObservable?View.GONE:View.VISIBLE}"
                     android:onClick="@{()->buyListener.onBuy(index)}"
                     android:background="@color/black">
 
                     <ImageView
                         android:id="@+id/buy_img"
-                        android:layout_width="18dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="18dp"
-                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_12sdp"
                         android:src="@drawable/card_icon"
                         android:scaleType="fitXY"
                         app:layout_constraintTop_toTopOf="parent"
@@ -144,14 +242,48 @@
                         android:textSize="16sp"
                         android:textColor="@color/white"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:fontFamily="@font/sf_pro_text_semi_bold"
+                        android:fontFamily="@font/sanspro_semibold"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/buy_img"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </LinearLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/buyClicked"
+                android:layout_width="125dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right"
+                android:visibility="@{viewModel.buyObservable?View.VISIBLE:View.GONE}"
+                android:onClick="@{()->buyListener.onBuy(index)}"
+                android:background="@color/black">
+
+                <ImageView
+                    android:id="@+id/buy_img_clicked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:src="@drawable/card_icon"
+                    android:scaleType="fitXY"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/buy"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@font/sanspro_semibold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/buy_img_clicked"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

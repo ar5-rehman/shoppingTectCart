@@ -11,6 +11,8 @@ import android.os.Bundle
 import android.util.DisplayMetrics
 import android.view.*
 import android.widget.RelativeLayout
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -82,7 +84,19 @@ class CheckoutFragment : BaseFragment(R.layout.fragment_checkout) {
         }
 
         binding.buyBtn.setOnDebouncedClickListener {
-            thanksForOrderDialog()
+            binding.bgImage.isVisible = true
+            binding.promoDialog.isVisible = true
+            //thanksForOrderDialog()
+        }
+
+        binding.ivClose.setOnDebouncedClickListener {
+            binding.bgImage.isGone = true
+            binding.promoDialog.isGone = true
+        }
+
+        binding.tvEnter.setOnDebouncedClickListener {
+            binding.bgImage.isGone = true
+            binding.promoDialog.isGone = true
         }
     }
 

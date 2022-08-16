@@ -1,5 +1,7 @@
 package com.clothing.shoppingcarts.ui.shop.item
 
+import androidx.databinding.ObservableBoolean
+import androidx.databinding.ObservableField
 import androidx.lifecycle.viewModelScope
 import com.clothing.shoppingcarts.base.viewmodel.BaseAction
 import com.clothing.shoppingcarts.base.viewmodel.BaseViewModel
@@ -18,6 +20,10 @@ internal class WomenClothItemViewModel @Inject constructor(
     private val clothingRepository: ClothingRepository,
 ) : BaseViewModel<WomenClothItemViewModel.ViewState, WomenClothItemViewModel.Action>(ViewState()) {
 
+    val favObservable = ObservableBoolean(false)
+    val addObservable = ObservableBoolean(false)
+    val tryObservable = ObservableBoolean(false)
+    val buyObservable = ObservableBoolean(false)
 
     init {
         loadData()
