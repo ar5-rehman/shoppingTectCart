@@ -5,6 +5,8 @@
 
     <data>
 
+        <import type="android.view.View"/>
+
         <variable
             name="listener"
             type="com.clothing.shoppingcarts.ui.shop.womendetails.DetailsClothListener" />
@@ -12,6 +14,10 @@
         <variable
             name="index"
             type="Integer" />
+
+        <variable
+            name="item"
+            type="com.clothing.shoppingcarts.network.responses.SubCategoryItem" />
 
         <variable
             name="imageUrl"
@@ -25,12 +31,16 @@
             name="price"
             type="String" />
 
+        <variable
+            name="shopLookVisibility"
+            type="Boolean" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="@{()->listener.onClicked(index)}"
+        android:onClick="@{()->listener.onClicked(item)}"
         android:paddingHorizontal="@dimen/_10sdp">
 
         <ImageView
@@ -72,6 +82,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="@dimen/_30sdp"
+            android:visibility="@{shopLookVisibility?View.VISIBLE:View.GONE}"
+            android:onClick="@{()->listener.onShopLookClicked(index)}"
             android:background="@drawable/bg_shop_look"
             app:layout_constraintStart_toStartOf="@+id/iv_img"
             app:layout_constraintEnd_toEndOf="@+id/iv_img"

@@ -1,5 +1,6 @@
 package com.clothing.shoppingcarts.ui.shop.womendetails
 
+import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.viewModelScope
 import com.clothing.shoppingcarts.base.viewmodel.BaseAction
 import com.clothing.shoppingcarts.base.viewmodel.BaseViewModel
@@ -18,6 +19,7 @@ internal class WomenDetailsViewModel @Inject constructor(
     private val clothingRepository: ClothingRepository,
 ) : BaseViewModel<WomenDetailsViewModel.ViewState, WomenDetailsViewModel.Action>(ViewState()) {
 
+    val shopLookObservable = ObservableBoolean(false)
 
     init {
         loadData()
@@ -34,6 +36,10 @@ internal class WomenDetailsViewModel @Inject constructor(
                 sendAction(Action.LoadingFailure(error.message))
             }
         }
+    }
+
+    fun shopLook(){
+        sendAction(Action.ShopLook)
     }
 
     /**
@@ -60,6 +66,7 @@ internal class WomenDetailsViewModel @Inject constructor(
     internal sealed class Action : BaseAction {
         object LoadingStarting : Action()
         class LoadingFailure(val message: String) : Action()
+        object ShopLook : Action()
         class SubcategoriesSuccess(val status: Boolean, val subCategories: List<SubCategoryItem>) : Action()
     }
 
@@ -88,6 +95,13 @@ internal class WomenDetailsViewModel @Inject constructor(
             message = null,
             status = viewAction.status,
             subCategories = viewAction.subCategories
+        )
+        is Action.ShopLook -> state.copy(
+            isLoading = false,
+            isError = false,
+            isRefreshing = false,
+            message = null
+
         )
     }
 }

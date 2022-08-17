@@ -105,7 +105,8 @@ class WomenClothDetailsFragment : BaseFragment(R.layout.fragment_women_cloth_det
                 itemWomenClothDetails {
                     id("details$index")
                     index(index)
-
+                    item(item)
+                    shopLookVisibility(item.shopLookVisibility)
                     item.defaultColorway.images.forEachIndexed { index, garmentImages ->
                         imageUrl("https://clothingtechshopping-api-dev.azurewebsites.net/Storage/GarmentImage/"+garmentImages.imageUrl)
                     }
@@ -113,13 +114,22 @@ class WomenClothDetailsFragment : BaseFragment(R.layout.fragment_women_cloth_det
                     name(item.name)
                     price("$"+item.price)
                     listener(object : DetailsClothListener{
-                        override fun onClicked(index: Int) {
+                        override fun onClicked(item: SubCategoryItem) {
+                            item.shopLookVisibility = true
+                            viewModel.shopLook()
+                        }
+
+                        override fun onShopLookClicked(index: Int) {
                             val action = WomenClothDetailsFragmentDirections.actionShopToWomenClothItemFragment(
                                 subCategoriesList[index].price.toString(), categoryName, subCategoriesList[index].id)
                             navManager.navigate(action)
                         }
                     })
                 }
+            }
+
+            itemBottomSpacer{
+                id("space")
             }
 
             itemBottomSpacer{
