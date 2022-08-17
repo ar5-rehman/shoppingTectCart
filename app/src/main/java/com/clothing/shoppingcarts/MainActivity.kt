@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.widget.FrameLayout
+import android.widget.TextView
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
@@ -112,6 +113,9 @@ class MainActivity : AppCompatActivity() {
         // inflate badge from layout
         val badge = LayoutInflater.from(this)
             .inflate(R.layout.badge_layout, bottomMenu, false)
+
+        val bagTotalItems = badge.findViewById<TextView>(R.id.bagTotalItems)
+        bagTotalItems.text = "1"
 
         // create badge layout parameter
         val badgeLayout: FrameLayout.LayoutParams = FrameLayout.LayoutParams(badge?.layoutParams!!).apply {

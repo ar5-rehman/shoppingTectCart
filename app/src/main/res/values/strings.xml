@@ -43,6 +43,7 @@
     <string name="dresses_desc">Romantic, trendy or casual – shop our full selection of ladies’ dresses here. Whether you’re on the lookout for cocktail or fitted styles, our evening dresses have got you covered. </string>
 
     <string name="price_">$%s</string>
+    <string name="shop_look">SHOP LOOK</string>
     <!--The following entry is necessary for Unity Library-->
     <string name="game_view_content_description">Game view</string>
 

@@ -17,6 +17,7 @@ import com.clothing.shoppingcarts.base.navigation.NavManager
 import com.clothing.shoppingcarts.data.models.CategoriesDTOItem
 import com.clothing.shoppingcarts.databinding.FragmentWomenClothDetailsBinding
 import com.clothing.shoppingcarts.di.SharePreferencesManager
+import com.clothing.shoppingcarts.itemBottomSpacer
 import com.clothing.shoppingcarts.itemWomenClothDetails
 import com.clothing.shoppingcarts.network.responses.SubCategoryItem
 import com.clothing.shoppingcarts.ui.shop.ShopFragmentDirections
@@ -96,8 +97,6 @@ class WomenClothDetailsFragment : BaseFragment(R.layout.fragment_women_cloth_det
             if (view == null)
                 return@withModels
 
-
-
             if(subCategoriesList.isEmpty()){
                 return@withModels
             }
@@ -121,6 +120,10 @@ class WomenClothDetailsFragment : BaseFragment(R.layout.fragment_women_cloth_det
                         }
                     })
                 }
+            }
+
+            itemBottomSpacer{
+                id("space")
             }
         }
     }
