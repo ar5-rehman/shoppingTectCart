@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/_12sdp">
+
+        <ImageView
+            android:id="@+id/iv_stars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:src="@drawable/ic_stars"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_reviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:fontFamily="@font/sanspro_regular"
+            android:text="Reviews 4 out of 5"
+            android:textColor="@color/deep_grey"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_stars"
+            app:layout_constraintStart_toStartOf="@id/iv_stars"
+            app:layout_constraintTop_toBottomOf="@+id/iv_stars" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/sanspro_regular"
+            android:text="@string/c_choice"
+            android:textColor="@color/deep_grey"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_reviews" />
+
+        <TextView
+            android:id="@+id/tv_desce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:fontFamily="@font/sanspro_regular"
+            android:text="@string/static_desc"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <TextView
+            android:id="@+id/tv_sizeOnModel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/sanspro_semibold"
+            android:text="@string/sizes_on_model"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_desce" />
+
+        <TextView
+            android:id="@+id/sizeOnModel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sanspro_regular"
+            android:text="size S,  176cm/5'9"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintStart_toEndOf="@id/guideline3"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_sizeOnModel"
+            app:layout_constraintTop_toTopOf="@+id/tv_sizeOnModel" />
+
+
+        <TextView
+            android:id="@+id/tv_composition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/sanspro_semibold"
+            android:text="@string/composition"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sizeOnModel" />
+
+        <TextView
+            android:id="@+id/composition"
+            android:layout_width="191dp"
+            android:layout_height="71dp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="@font/sanspro_regular"
+            android:text="Rayon 82%, Polyamide 18%\n\nMore sustainable materialsShell: LivaEco™ Viscose 82%"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintStart_toEndOf="@id/guideline3"
+            app:layout_constraintTop_toTopOf="@+id/tv_composition" />
+
+        <TextView
+            android:id="@+id/tv_artNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/sanspro_semibold"
+            android:text="@string/art_no"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/composition" />
+
+        <TextView
+            android:id="@+id/artNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sanspro_regular"
+            android:text="102975555454"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintStart_toEndOf="@id/guideline3"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_artNo"
+            app:layout_constraintTop_toTopOf="@+id/tv_artNo" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.38"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -152,14 +152,14 @@
                 android:text="@string/edit_shipping"
                 android:gravity="center"
                 android:includeFontPadding="false"
-                android:paddingVertical="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_1sdp"
                 android:paddingStart="@dimen/_15sdp"
                 android:paddingEnd="@dimen/_10sdp"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_14ssp"
                 app:layout_constraintStart_toStartOf="@+id/tax_tv"
                 app:layout_constraintTop_toBottomOf="@id/rect"
-                app:drawableStartCompat="@drawable/shipping_icon" />
+                app:drawableStartCompat="@drawable/ic_shipping_icon" />
 
             <ImageView
                 android:id="@+id/rectTwo"
@@ -194,14 +194,14 @@
                 android:text="@string/edit_cards"
                 android:gravity="center"
                 android:includeFontPadding="false"
-                android:paddingVertical="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_1sdp"
                 android:paddingStart="@dimen/_15sdp"
                 android:paddingEnd="@dimen/_10sdp"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_14ssp"
                 app:layout_constraintStart_toStartOf="@+id/tv_edit_card"
                 app:layout_constraintTop_toBottomOf="@id/rectTwo"
-                app:drawableStartCompat="@drawable/debt_card" />
+                app:drawableStartCompat="@drawable/ic_card_icon_black" />
 
             <TextView
                 android:id="@+id/buy_btn"
@@ -215,7 +215,7 @@
                 android:backgroundTint="@color/blakish"
                 android:includeFontPadding="false"
                 android:layout_marginHorizontal="@dimen/_20sdp"
-                android:paddingVertical="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_1sdp"
                 android:paddingStart="@dimen/_20sdp"
                 android:paddingEnd="@dimen/_20sdp"
                 android:textColor="@color/white"
@@ -223,7 +223,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/editCard_btn"
-                app:drawableStartCompat="@drawable/card_icon"
+                app:drawableStartCompat="@drawable/ic_card_icon_white"
                 android:drawablePadding="-25dp"/>
 
             <View
@@ -273,7 +273,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_6sdp"
                 android:layout_marginTop="@dimen/_6sdp"
-                android:src="@drawable/tick"
+                android:src="@drawable/ic_tick"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_close" />

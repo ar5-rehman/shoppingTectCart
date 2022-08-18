@@ -46,7 +46,13 @@
     <string name="shop_look">SHOP LOOK</string>
     <!--The following entry is necessary for Unity Library-->
     <string name="game_view_content_description">Game view</string>
+    <string name="c_choice">Conscious choice</string>
+    <string name="sizes_on_model">Size on Model-</string>
+    <string name="art_no">Art No.-</string>
+    <string name="composition">Composition-</string>
+    <string name="static_desc">Short dress in woven fabric with a slight sheen. Low-cut V-neck at front and back, horizontal ties at back of neck, and voluminous ¾-length sleeves with narrow, covered elastic at cuffs. Gathered seam below bust at front and back of waist. Unlined.</string>
 
     <dimen name="bagde_left_margin">10dp</dimen>
     <dimen name="design_bottom_navigation_margin">6dp</dimen>
+
 </resources>

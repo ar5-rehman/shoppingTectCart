@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/_6sdp"
         android:layout_marginTop="@dimen/_6sdp"
-        android:src="@drawable/tick"
+        android:src="@drawable/ic_tick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_close" />
