@@ -19,8 +19,6 @@ internal class WomenDetailsViewModel @Inject constructor(
     private val clothingRepository: ClothingRepository,
 ) : BaseViewModel<WomenDetailsViewModel.ViewState, WomenDetailsViewModel.Action>(ViewState()) {
 
-    val shopLookObservable = ObservableBoolean(false)
-
     init {
         loadData()
     }

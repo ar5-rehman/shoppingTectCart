@@ -11,8 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.airbnb.epoxy.Carousel
 import com.airbnb.epoxy.carousel
 import com.ar7lab.cherieapp.base.extension.observe
-import com.clothing.shoppingcarts.ItemWomenClothItemsBindingModel_
-import com.clothing.shoppingcarts.R
+import com.clothing.shoppingcarts.*
 import com.clothing.shoppingcarts.base.delegate.viewBinding
 import com.clothing.shoppingcarts.base.extension.setOnDebouncedClickListener
 import com.clothing.shoppingcarts.base.fragment.BaseFragment
@@ -20,8 +19,6 @@ import com.clothing.shoppingcarts.base.navigation.NavManager
 import com.clothing.shoppingcarts.databinding.FragmentWomenClothDetailsBinding
 import com.clothing.shoppingcarts.databinding.FragmentWomenClothItemBinding
 import com.clothing.shoppingcarts.di.SharePreferencesManager
-import com.clothing.shoppingcarts.itemWomenClothDetails
-import com.clothing.shoppingcarts.itemWomenClothItemMainImg
 import com.clothing.shoppingcarts.network.responses.SubCategoryItem
 import com.clothing.shoppingcarts.ui.shop.womendetails.WomenClothDetailsFragmentDirections
 import com.clothing.shoppingcarts.ui.unity.UnityActivity
@@ -182,6 +179,33 @@ class WomenClothItemFragment : BaseFragment(R.layout.fragment_women_cloth_item) 
                 models(items)
             }
 
+            itemClothBottomDetails{
+                id("bottom_details")
+            }
+
+            itemBottomSpacer{
+                id("space")
+            }
+
+            itemBottomSpacer{
+                id("space")
+            }
+
+            itemBottomSpacer{
+                id("space")
+            }
+
+            itemBottomSpacer{
+                id("space")
+            }
+
+            itemBottomSpacer{
+                id("space")
+            }
+
+            itemBottomSpacer{
+                id("space")
+            }
         }
     }
 }

@@ -80,6 +80,8 @@ class WomenClothDetailsFragment : BaseFragment(R.layout.fragment_women_cloth_det
             categoryID = it.getInt(CATEGORY_ID)
             categoryName = it.getString(CATEGORY_NAME).toString()
             binding.tvTitle.text = categoryName
+
+            if(subCategoriesList.isEmpty())
             viewModel.getSubCategories(categoryID)
         }
 

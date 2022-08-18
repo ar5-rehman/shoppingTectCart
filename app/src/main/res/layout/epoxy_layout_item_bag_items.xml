@@ -47,7 +47,7 @@
             android:id="@+id/iv_heart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/fav_black"
+            android:src="@drawable/ic_heart_black"
             android:scaleType="fitXY"
             android:layout_margin="@dimen/_5sdp"
             app:layout_constraintEnd_toEndOf="@+id/iv_items"
