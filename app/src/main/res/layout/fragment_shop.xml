@@ -159,7 +159,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/_18sdp"
             android:elevation="@dimen/_15sdp"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="@dimen/_80sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">

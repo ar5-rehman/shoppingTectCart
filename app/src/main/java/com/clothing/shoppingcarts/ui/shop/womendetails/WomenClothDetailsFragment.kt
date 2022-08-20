@@ -117,7 +117,7 @@ class WomenClothDetailsFragment : BaseFragment(R.layout.fragment_women_cloth_det
                     price("$"+item.price)
                     listener(object : DetailsClothListener{
                         override fun onClicked(item: SubCategoryItem) {
-                            item.shopLookVisibility = true
+                            item.shopLookVisibility = !item.shopLookVisibility
                             viewModel.shopLook()
                         }
 

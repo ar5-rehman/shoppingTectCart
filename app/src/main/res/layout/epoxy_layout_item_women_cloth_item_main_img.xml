@@ -60,7 +60,7 @@
             android:id="@+id/iv_heart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@{viewModel.favObservable?@drawable/ic_heart_black_fill:@drawable/ic_heart_white}"
+            android:src="@{viewModel.favObservable?@drawable/ic_heart_icon_filled:@drawable/ic_heart_white}"
             android:scaleType="fitXY"
             android:padding="@dimen/_5sdp"
             android:onClick="@{()->favListener.fav()}"
@@ -112,7 +112,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/add_clicked"
-                android:layout_width="125dp"
+                android:layout_width="135dp"
                 android:layout_height="40dp"
                 android:layout_gravity="right"
                 android:visibility="@{viewModel.addObservable?View.VISIBLE:View.GONE}"
@@ -182,7 +182,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/tryDressClicked"
-                android:layout_width="125dp"
+                android:layout_width="135dp"
                 android:layout_height="40dp"
                 android:layout_gravity="right"
                 android:visibility="@{viewModel.tryObservable?View.VISIBLE:View.GONE}"
@@ -251,7 +251,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/buyClicked"
-                android:layout_width="125dp"
+                android:layout_width="135dp"
                 android:layout_height="40dp"
                 android:layout_gravity="right"
                 android:visibility="@{viewModel.buyObservable?View.VISIBLE:View.GONE}"
