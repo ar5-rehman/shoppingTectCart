@@ -124,7 +124,6 @@ class WomenClothItemFragment : BaseFragment(R.layout.fragment_women_cloth_item) 
                 buyListener(object: BuyListener{
                     override fun onBuy(index: Int) {
 
-                        
                         viewModel.tryObservable.set(false)
                         viewModel.buyObservable.set(true)
                         viewModel.addObservable.set(false)
